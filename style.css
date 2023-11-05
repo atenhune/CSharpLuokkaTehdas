@@ -1,0 +1,183 @@
+:root{
+    --cl-1: #095a63;
+    --cl-2: #073438;
+    --cl-3: #0e4b50;
+    --cl-4: #2d8f85;
+    --cl-5: #637c54;
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.buttonit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+.nimi{
+    float: left;
+    width: 83%;
+}
+
+.copy-nappi:hover{
+    opacity: 0.7;
+}
+
+.copy-nappi:active{
+    opacity: 0.5;
+}
+
+.textarea-header{
+    height: 25px;
+    background-color: #4b4949;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
+    display: flex;
+    align-items: center;
+    color: #a6a8ac; 
+    padding-left: 5px;
+    display: flex;
+}
+
+
+#copy{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #4b4949;
+    border: #4b4949;
+    color: #a6a8ac;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#copy-icon{
+    width: 16px; 
+    height: 16px; 
+    margin-right: 2px; 
+    display: inline; 
+    vertical-align: middle; 
+    background: none;
+}
+
+#input_area, #output_area {
+    width: 25%;
+    height: 42vh;
+    min-width: 400px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-image: linear-gradient(to right, #d3cce3, #e9e4f0);
+    position: relative;
+}
+
+#input_area:hover,
+#output_area:hover{
+    outline: auto;
+    resize: none;
+}
+
+
+#input_area::-webkit-scrollbar, #output_area::-webkit-scrollbar{
+    width: 8px;
+}
+
+#input_area::-webkit-scrollbar-thumb, #output_area::-webkit-scrollbar-thumb {
+    background: #cfcdcd;
+    border-radius: 5px;
+}
+
+#input_area::-webkit-scrollbar-thumb:hover, #output_area::-webkit-scrollbar-thumb:hover {
+    background: #555;
+    cursor: grab;
+}
+
+
+
+#luo, #tyhjennä {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#luo {
+    background-image: linear-gradient(to right, green, rgb(3, 192, 3));
+    position: relative;
+    right: 5px;
+
+}
+
+#luo:active{
+    opacity: 0.5;
+}
+
+
+#tyhjennä {
+    background-image: linear-gradient(to right, red, rgb(202, 5, 5));
+    position: relative;
+    left: 5px;
+}
+
+#tyhejnnä:active{
+    opacity: 0.5;
+}
+
+.custom-textarea {
+    position: relative;
+}
+
+.custom-textarea::before,
+.custom-textarea::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        45deg,
+        var(--cl-3),
+        var(--cl-4)
+/*         var(--cl-5) */
+    ); 
+    border-radius: 5px;
+    filter: blur(2.5rem);
+    z-index: -1; 
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.custom-textarea:hover::before,
+.custom-textarea:hover::after {
+    opacity: 1; 
+}
+
+#luo::before,
+#tyhjennä::before{
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgb(245, 241, 242);
+    border-radius: 5px;
+    filter: blur(0.5rem);
+    opacity: 0;
+    z-index: -1;
+    transition: opacity 0.3s;
+}
+
+#luo:hover::before,
+#tyhjennä:hover::before{
+    opacity: 1;
+}
+
+body{
+    background: linear-gradient(
+        45deg,
+        var(--cl-1),
+        var(--cl-2)
+    );
+    overflow-y: hidden;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>C# Luokkatehdas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="custom-textarea">
+            <div class="textarea-header">Input Text</div>
+            <textarea rows="4" cols="50" placeholder="Kopio tähän." wrap="off" id="input_area"></textarea>
+        </div>
+        <div class="buttonit">
+            <button type="button" value="luo" id="luo">LUO</button>
+            <button type="button" value="tyhjennä" id="tyhjennä">TYHJENNÄ</button>
+        </div>
+        <div class="custom-textarea">
+            <div class="textarea-header">
+                <div class="nimi">C# Luokka</div>
+                <div class="copy-nappi">
+                    <button type="button" value="copy" id="copy">
+                        <img src="clipboard.png" alt="Clipboard Icon" id="copy-icon">
+                        Copy
+                    </button>
+                </div>
+            </div> 
+            <div class="output">
+                <textarea rows="4" cols="50" wrap="off" id="output_area"></textarea>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

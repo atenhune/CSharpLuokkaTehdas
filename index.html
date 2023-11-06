@@ -18,20 +18,16 @@
         </div>
         <div class="custom-textarea">
             <div class="textarea-header">
-                <div class="nimi">C# Luokka</div>
-                <div class="copy-nappi">
-                    <button type="button" value="copy" id="copy">
-                        <img src="clipboard.png" alt="Clipboard Icon" id="copy-icon">
+                <span id="tekstin-nimi">C# Luokka</span>
+                <button type="button" value="copy" id="copy">
+                    <img src="clipboard.png" alt="Clipboard Icon" id="copy-icon">
                         Copy
-                    </button>
-                </div>
+                </button>
             </div> 
-            <div class="output">
-                <textarea rows="4" cols="50" placeholder="public class Luokka
+            <textarea rows="4" cols="50" wrap="off" id="output_area" placeholder="public class VAIHDANIMI
 {
-        public int? Id { get; set; }
-}" wrap="off" id="output_area" spellcheck="false"></textarea>
-            </div>
+    public int? Id { get; set; }
+}" spellcheck="false"></textarea>
         </div>
     </div>
     <script src="script.js"></script>

@@ -1,3 +1,14 @@
+@property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
+
+@keyframes rotation {
+    0%   { --gradient-angle: 0deg; }
+    100% { --gradient-angle: 360deg; }
+}
+
 :root{
     --cl-1: #095a63;
     --cl-2: #073438;
@@ -14,6 +25,7 @@
     justify-content: center;
     height: 100vh;
 }
+
 .buttonit{
     display: flex;
     justify-content: center;
@@ -21,16 +33,11 @@
     margin: 10px;
 }
 
-.nimi{
-    float: left;
-    width: 83%;
-}
-
-.copy-nappi:hover{
+#copy:hover{
     opacity: 0.7;
 }
 
-.copy-nappi:active{
+#copy:active{
     opacity: 0.5;
 }
 
@@ -43,13 +50,15 @@
     align-items: center;
     color: #a6a8ac; 
     padding-left: 5px;
-    display: flex;
+    justify-content: space-between;
+    width: 25%;
+    min-width: 400px;
 }
 
 
 #copy{
     display: flex;
-    justify-content: center;
+    justify-content: end;
     align-items: center;
     background-color: #4b4949;
     border: #4b4949;
@@ -73,8 +82,16 @@
     min-width: 400px;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
-    background-image: linear-gradient(to right, #d3cce3, #e9e4f0);
+/*     background: linear-gradient(
+        45deg,
+        var(--cl-1),
+        var(--cl-3),
+        var(--cl-4)
+    ); */
+    background: var(--cl-2);
     position: relative;
+    color: white;
+    overflow-x: hidden;
 }
 
 #input_area:hover,
@@ -127,37 +144,45 @@
 
 .custom-textarea {
     position: relative;
-    box-shadow: 5px 5px 10px var(--cl-4);
-}
+/*     box-shadow: 5px 5px 10px var(--cl-4); */
+} 
 
 .custom-textarea::before,
 .custom-textarea::after {
     content: "";
+    height: 40vh;
+    border-top-right-radius: 5px;
+    border-top-left-radius: 5px;
     position: absolute;
     inset: 0;
-/*     background: linear-gradient(
-        45deg,
-        var(--cl-1),
-        var(--cl-2)
-        var(--cl-5) 
-    ); */  
-    background: var(--cl-1);
-    border-radius: 5px;
-    filter: blur(2.5rem);
+    background: conic-gradient(
+        from var(--gradient-angle),
+        var(--cl-3),
+        var(--cl-4),
+        var(--cl-5),
+        var(--cl-4),
+        var(--cl-3)
+    );
     z-index: -1; 
-    opacity: 0;
-    transition: opacity 0.3s;
+    opacity: 1;
+    animation: rotation 20s linear infinite;
 }
 
-.custom-textarea:hover::before,
+.custom-textarea::after{
+    filter: blur(3.5rem);
+}
+/* .custom-textarea:hover::before,
 .custom-textarea:hover::after {
     opacity: 1; 
-}
+} */
 
 #luo::before,
 #tyhjennä::before{
     content: "";
     position: absolute;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+    height: 40vh;
     inset: 0;
     background: rgb(245, 241, 242);
     border-radius: 5px;
@@ -173,11 +198,6 @@
 }
 
 body{
-    background: linear-gradient(
-        45deg,
-        var(--cl-3),
-        var(--cl-4),
-        var(--cl-5)
-    );
+    background: var(--cl-2);
     margin: 0;
 }

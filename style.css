@@ -43,7 +43,7 @@
 
 .textarea-header{
     height: 25px;
-    background-color: #4b4949;
+    background: #4b4949;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
     display: flex;
@@ -60,7 +60,7 @@
     display: flex;
     justify-content: end;
     align-items: center;
-    background-color: #4b4949;
+    background: #4b4949;
     border: #4b4949;
     color: #a6a8ac;
     cursor: pointer;
@@ -79,15 +79,9 @@
 #input_area, #output_area {
     width: 25%;
     height: 42vh;
-    min-width: 420px;
+    min-width: 400px;
     border-bottom-right-radius: 5px;
     border-bottom-left-radius: 5px;
-/*     background: linear-gradient(
-        45deg,
-        var(--cl-1),
-        var(--cl-3),
-        var(--cl-4)
-    ); */
     background: var(--cl-2);
     position: relative;
     color: white;

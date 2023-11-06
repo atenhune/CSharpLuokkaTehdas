@@ -40,7 +40,7 @@ function convert(input_text) {
 }
 
 function removeSpacesAndConsolidateNewlines(inputString) {
-    return inputString.replace(/[ \t]+/g, '').replace(/\n{2,}/g, '\n');
+    return inputString.trim().replace(/[ \t]+/g, '').replace(/\n{2,}/g, '\n');
   }
 
 function getTypesAndNames(rivit){
